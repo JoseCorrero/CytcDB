@@ -1,0 +1,30 @@
+<!-- form-completa.component.html -->
+
+<div style="margin: 0px 20px 5px 20px;">
+    <form [formGroup]="fgCompleta" class="form">
+        <!-- Estado -->
+        <mat-form-field class="input20">
+            <mat-select formControlName="estado" placeholder="Estado" #estado>
+                <mat-option [value]="null"></mat-option>
+                <mat-option *ngFor="let estado of estados" [value]="estado.id">
+                    {{ estado.nombre }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- Fecha contrato -->
+        <mat-form-field class="input20">
+            <input matInput formControlName="fechaContrato" placeholder="Fecha del contrato"
+                [matDatepicker]="pickerContrato" #fechaContrato>
+            <mat-datepicker-toggle matSuffix [for]="pickerContrato"></mat-datepicker-toggle>
+            <mat-datepicker #pickerContrato></mat-datepicker>
+        </mat-form-field>
+
+        <!-- Observaciones instalación -->
+        <mat-form-field class="input100">
+            <textarea maxlength="512" rows="9" matInput formControlName="observaciones"
+                placeholder="Observaciones instalación" #observaciones></textarea>
+            <mat-hint align="end"> {{ observaciones.value.length }} / 512 </mat-hint>
+        </mat-form-field>
+    </form>
+</div>

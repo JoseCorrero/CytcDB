@@ -1,0 +1,37 @@
+table {
+    width: 100%;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+button {
+    margin: 5px;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.mat-expansion-panel-margin {
+    margin: 10px;
+}
+
+.mat-expansion-panel-header-description {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+
+.mat-column-Opciones {
+    width: 95px !important;
+}
+
+.mat-column-Baja {
+    display: none;
+}
+
+.row-esBaja {
+    background-color: lightcoral;
+}

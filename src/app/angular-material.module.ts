@@ -1,0 +1,75 @@
+import { NgModule } from '@angular/core';
+import { 
+   MatTableModule, 
+   MatIconModule, 
+   MatButtonModule,
+   MatPaginatorModule, 
+   MatSortModule, 
+   MatInputModule,
+   MatSidenavModule, 
+   MatSlideToggleModule, 
+   MatSelectModule, 
+   MatMenuModule,
+   MatDatepickerModule,
+   MatNativeDateModule, 
+   MatRadioModule,
+   MatAutocompleteModule,
+   MatSnackBarModule,
+   MatDialogModule,
+   MatExpansionModule,
+   MatDividerModule,
+   MatTooltipModule,
+   MatCardModule,
+   MatTabsModule
+} from '@angular/material';
+
+@NgModule({
+  imports: [
+     MatTableModule,
+     MatPaginatorModule,
+     MatSortModule,
+     MatIconModule,
+     MatButtonModule,
+     MatInputModule,
+     MatSidenavModule,
+     MatSlideToggleModule,
+     MatSelectModule, 
+     MatMenuModule,
+     MatDatepickerModule,
+     MatNativeDateModule,
+     MatRadioModule,
+     MatAutocompleteModule,
+     MatSnackBarModule,
+     MatDialogModule,
+     MatExpansionModule,
+     MatDividerModule,
+     MatTooltipModule,
+     MatCardModule,
+     MatTabsModule
+  ],
+  exports: [
+     MatTableModule,
+     MatPaginatorModule,
+     MatSortModule,
+     MatIconModule,
+     MatButtonModule,
+     MatInputModule,
+     MatSidenavModule,
+     MatSlideToggleModule,
+     MatSelectModule, 
+     MatMenuModule,
+     MatDatepickerModule,
+     MatNativeDateModule,
+     MatRadioModule,
+     MatAutocompleteModule,
+     MatSnackBarModule,
+     MatDialogModule,
+     MatExpansionModule,
+     MatDividerModule,
+     MatTooltipModule,
+     MatCardModule,
+     MatTabsModule
+  ]
+})
+
+export class AngularMaterialModule {}

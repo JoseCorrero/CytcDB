@@ -1,0 +1,25 @@
+<!-- create-poblacion.component.html -->
+
+<h1 mat-dialog-title>Nueva población</h1>
+<div mat-dialog-content>
+    <form [formGroup]="fgPoblacion" class="form">
+        <!-- Provincia -->
+        <mat-form-field class="input100">
+            <mat-select formControlName="provincia" placeholder="Provincia" #provincia>
+                <mat-option [value]="null"></mat-option>
+                <mat-option *ngFor="let provincia of data" [value]="provincia.id">
+                    {{ provincia.nombre }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- Población -->
+        <mat-form-field class="input100">
+            <input maxlength="32" matInput formControlName="nombre" placeholder="Población" #nombre>
+        </mat-form-field>
+    </form>
+</div>
+<div style="padding: 15px;" mat-dialog-actions align="center">
+    <button mat-flat-button color="primary" (click)="cancel()">Cancelar</button>
+    <button mat-flat-button color="accent" (click)="create()" [disabled]="validate()">Guardar</button>
+</div>

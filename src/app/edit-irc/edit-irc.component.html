@@ -1,0 +1,38 @@
+<!-- edit-irc.component.html -->
+
+<div class="container">
+    <div class="full-form">
+        <div align="right">
+            <button *ngIf="!esBaja" mat-flat-button color="warn" (click)="switchEsBaja()">Dar de baja</button>
+            <button *ngIf="esBaja" mat-flat-button color="primary" (click)="switchEsBaja()">Dar de alta</button>
+        </div>
+
+        <br>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Datos generales
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-form-instalacion></app-form-instalacion>
+        </mat-expansion-panel>
+
+        <br>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Datos IRC
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-form-irc></app-form-irc>
+        </mat-expansion-panel>
+    </div>
+
+    <div align="center">
+        <button mat-flat-button color="accent" (click)="update()" [disabled]="validate()"
+            style="margin: 4px;">Guardar</button>
+    </div>
+
+</div>

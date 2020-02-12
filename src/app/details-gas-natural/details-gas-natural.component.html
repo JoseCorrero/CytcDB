@@ -1,0 +1,281 @@
+<!-- details-gas-natural.component.html -->
+
+<div style="margin: 10px;" align="right">
+    <a mat-flat-button style="margin-right: 8px;" color="primary" (click)="openFolder()">
+        Dropbox
+    </a>
+    
+    <a mat-flat-button color="accent" [routerLink]="['/editar-gasnatural/', id]" class="nav-link"
+        routerLinkActive="active">Editar</a>
+</div>
+
+<mat-card>
+    <mat-card-title align="center">
+        Gas natural
+    </mat-card-title>
+    <mat-card-content>
+        <div class="half">
+            <mat-card>
+                <p><b>Dirección</b> <br> {{ instalacion.direccion }}</p>
+                <p><b>Población</b> <br> {{ instalacion.poblacion.nombre }}</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Instaladores</b> <br> {{ instalacion.instaladores }}</p>
+                <p><b>Fecha de instalación</b> <br> {{ instalacion.fechaInstalacion }}</p>
+                <p><b>Presupuesto</b> <br> {{ instalacion.presupuesto }} €</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Contratante</b> <br> {{ instalacion.contratante.nombre }}</p>
+                <p><b>Agente comercial</b> <br> {{ instalacion.agente }}</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Observaciones generales</b> <br> {{ instalacion.observaciones }}</p>
+                <p><b>Observaciones de la instalación</b> <br> {{ instalacion.irisc_observaciones }}</p>
+                <p><b>Observaciones de los contratos</b> <br> {{ instalacion.irisgn_contObservaciones }}</p>
+            </mat-card>
+        </div>
+        <div class="half">
+            <mat-card>
+                <p><b>Nombre completo</b> <br> {{ instalacion.iris_nombre }} {{ instalacion.iris_apellidos }}</p>
+                <p><b>DNI</b> <br> {{ instalacion.iris_dni }}</p>
+                <p><b>Teléfonos</b> <br> {{ instalacion.iris_telefonos }}</p>
+            </mat-card>
+
+            <mat-card>
+                <table style="text-align: center;">
+                    <tr>
+                        <th>Cobrado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-icon class="check" *ngIf="instalacion.iris_cobrado == 1">
+                                check
+                            </mat-icon>
+                            <mat-icon class="cancel" *ngIf="instalacion.iris_cobrado == 0">
+                                close
+                            </mat-icon>
+                        </td>
+                    </tr>
+                </table>
+                <p><b>Aparato existente</b> <br> {{ instalacion.iris_aparatoExistente }}</p>
+                <p><b>Aparatos vendidos</b> <br> {{ instalacion.iris_aparatosVendidos }}</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Estado</b> <br> {{ instalacion.irisc_estado.nombre }}</p>
+                <p><b>Fecha del contrato</b> <br> {{ instalacion.irisc_fechaContrato }}</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Mercado</b> <br> {{ instalacion.irisgn_mercado.nombre }}</p>
+                <p><b>Fecha de puesta en gas</b> <br> {{ instalacion.irisgn_fechaPuestaGas }}</p>
+                <p><b>Tipos de aparato</b> <br> {{ instalacion.irisgn_tiposAparato }}</p>
+                <p><b>Piezas</b> <br> {{ instalacion.irisgn_piezas }}</p>
+            </mat-card>
+
+            <mat-card>
+                <table class="booleans">
+                    <tr>
+                        <th>Tiro forzado</th>
+                        <th>Soporte exterior</th>
+                        <th>IDI</th>
+                        <th>Facturado 1</th>
+                        <th>Facturado 2</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-icon class="check" *ngIf="instalacion.irisgn_tiroForzado == 1">
+                                check
+                            </mat-icon>
+                            <mat-icon class="cancel" *ngIf="instalacion.irisgn_tiroForzado == 0">
+                                close
+                            </mat-icon>
+                        </td>
+                        <td>
+                            <mat-icon class="check" *ngIf="instalacion.irisgn_soporteExterior == 1">
+                                check
+                            </mat-icon>
+                            <mat-icon class="cancel" *ngIf="instalacion.irisgn_soporteExterior == 0">
+                                close
+                            </mat-icon>
+                        </td>
+                        <td>
+                            <mat-icon class="check" *ngIf="instalacion.irisgn_idi == 1">
+                                check
+                            </mat-icon>
+                            <mat-icon class="cancel" *ngIf="instalacion.irisgn_idi == 0">
+                                close
+                            </mat-icon>
+                        </td>
+                        <td>
+                            <mat-icon class="check" *ngIf="instalacion.irisgn_facturado1 == 1">
+                                check
+                            </mat-icon>
+                            <mat-icon class="cancel" *ngIf="instalacion.irisgn_facturado1 == 0">
+                                close
+                            </mat-icon>
+                        </td>
+                        <td>
+                            <mat-icon class="check" *ngIf="instalacion.irisgn_facturado2 == 1">
+                                check
+                            </mat-icon>
+                            <mat-icon class="cancel" *ngIf="instalacion.irisgn_facturado2 == 0">
+                                close
+                            </mat-icon>
+                        </td>
+                    </tr>
+                </table>
+            </mat-card>
+        </div>
+
+        <br><br>
+
+        <mat-card-title align="center">
+            Contratos
+        </mat-card-title>
+        <mat-card-content>
+            <mat-card>
+                <mat-card-subtitle align="center">
+                    Comercializadora
+                </mat-card-subtitle>
+                <mat-card-content>
+                    <div class="half">
+                        <mat-card>
+                            <p><b>Subvención</b> <br> {{ instalacion.irisgn_contCom.subvencion }}</p>
+                            <p><b>Número de solicitud de la subvención</b> <br>
+                                {{ instalacion.irisgn_contCom.numeroSolicitud }}</p>
+                        </mat-card>
+                    </div>
+
+                    <div class="half">
+                        <mat-card>
+                            <p><b>Número de certificación</b> <br> {{ instalacion.irisgn_contCom.numeroCertificacion }}
+                            </p>
+                            <table style="text-align: center;">
+                                <tr>
+                                    <th>Facturado</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-icon class="check" *ngIf="instalacion.irisgn_contCom.facturado == 1">
+                                            check
+                                        </mat-icon>
+                                        <mat-icon class="cancel" *ngIf="instalacion.irisgn_contCom.facturado == 0">
+                                            close
+                                        </mat-icon>
+                                    </td>
+                                </tr>
+                            </table>
+                        </mat-card>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <mat-card-subtitle *ngIf="instalacion.irisgn_contDist.tipo == 1" align="center">
+                    Distribuidora <br> Redexis
+                </mat-card-subtitle>
+                <mat-card-subtitle *ngIf="instalacion.irisgn_contDist.tipo == 2" align="center">
+                    Distribuidora <br> Nedgia
+                </mat-card-subtitle>
+                <mat-card-content>
+                    <div class="half">
+                        <mat-card>
+                            <p><b>Campaña</b> <br> {{ instalacion.irisgn_contDist.campana }}</p>
+                            <p><b>Fecha de grabación del contrato</b> <br>
+                                {{ instalacion.irisgn_contDist.fechaGrabCont }}</p>
+                            <p><b>Fecha de grabación del certificado</b> <br>
+                                {{ instalacion.irisgn_contDist.fechaGrabCert }}</p>
+                            <p><b>CUPS</b> <br> {{ instalacion.irisgn_contDist.cups }}</p>
+                            <p><b>Regularización</b> <br> {{ instalacion.irisgn_contDist.regularizacion }} €</p>
+                            <p><b>Número de certificación de la regularización</b> <br>
+                                {{ instalacion.irisgn_contDist.numCertRegul }}</p>
+                        </mat-card>
+
+                        <mat-card *ngIf="instalacion.irisgn_contDist.tipo == 1">
+                            <p><b>Subvención IDI</b> <br> {{ instalacion.irisgn_contDist.subvencionIdi }} €</p>
+                            <table style="text-align: center;">
+                                <tr>
+                                    <th><b>IDI facturado</b></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-icon class="check" *ngIf="instalacion.irisgn_contDist.idiFacturado == 1">
+                                            check
+                                        </mat-icon>
+                                        <mat-icon class="cancel" *ngIf="instalacion.irisgn_contDist.idiFacturado == 0">
+                                            close
+                                        </mat-icon>
+                                    </td>
+                                </tr>
+                            </table>
+                        </mat-card>
+
+                        <mat-card *ngIf="instalacion.irisgn_contDist.tipo == 2">
+                            <p><b>Número de solicitud de ZEUS</b> <br>
+                                {{ instalacion.irisgn_contDist.numSolicitudZeus }}</p>
+                        </mat-card>
+                    </div>
+
+                    <div class="half">
+                        <mat-card>
+                            <p><b>Subvención</b> <br> {{ instalacion.irisgn_contDist.subvencion }} €</p>
+                            <table style="text-align: center;">
+                                <tr>
+                                    <th><b>Subvención facturada</b></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-icon class="check" *ngIf="instalacion.irisgn_contDist.subvFacturada == 1">
+                                            check
+                                        </mat-icon>
+                                        <mat-icon class="cancel" *ngIf="instalacion.irisgn_contDist.subvFacturada == 0">
+                                            close
+                                        </mat-icon>
+                                        <mat-icon class="por-partes"
+                                            *ngIf="instalacion.irisgn_contDist.subvFacturada == 2">
+                                            more_horiz
+                                        </mat-icon>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p><b>Cobrado de la subvención</b> <br> {{ instalacion.irisgn_contDist.cobradoSubv }} €</p>
+                            <p><b>Número de certificación de la subvención</b> <br>
+                                {{ instalacion.irisgn_contDist.numCertSubv }}</p>
+                        </mat-card>
+
+                        <mat-card>
+                            <p><b>Colaboración</b> <br> {{ instalacion.irisgn_contDist.colaboracion }} €</p>
+                            <table style="text-align: center;">
+                                <tr>
+                                    <th><b>Colaboración facturada</b></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-icon class="check" *ngIf="instalacion.irisgn_contDist.colabFacturada == 1">
+                                            check
+                                        </mat-icon>
+                                        <mat-icon class="cancel"
+                                            *ngIf="instalacion.irisgn_contDist.colabFacturada == 0">
+                                            close
+                                        </mat-icon>
+                                        <mat-icon class="por-partes"
+                                            *ngIf="instalacion.irisgn_contDist.colabFacturada == 2">
+                                            more_horiz
+                                        </mat-icon>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p><b>Cobrado de la colaboración</b> <br> {{ instalacion.irisgn_contDist.cobradoColab }} €
+                            </p>
+                            <p><b>Número de certificación de la colaboración</b> <br>
+                                {{ instalacion.irisgn_contDist.numCertColab }}</p>
+                        </mat-card>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </mat-card-content>
+    </mat-card-content>
+</mat-card>

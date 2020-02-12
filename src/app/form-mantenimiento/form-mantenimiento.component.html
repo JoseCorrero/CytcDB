@@ -1,0 +1,18 @@
+<!-- form-mantenimiento.component.html -->
+
+<div style="margin: 0px 20px 5px 20px;">
+    <form [formGroup]="fgMantenimiento" class="form">
+        <!-- Años -->
+        <mat-form-field class="input20">
+            <input type="number" min="0" matInput formControlName="years" placeholder="Años para mantenimiento" #years>
+        </mat-form-field>
+
+        <!-- Fecha mantenimiento -->
+        <mat-form-field class="input20">
+            <input matInput formControlName="fechaMantenimiento" placeholder="Fecha de mantenimiento"
+                [matDatepicker]="pickerMantenimiento" #fechaMantenimiento>
+            <mat-datepicker-toggle matSuffix [for]="pickerMantenimiento"></mat-datepicker-toggle>
+            <mat-datepicker #pickerMantenimiento></mat-datepicker>
+        </mat-form-field>
+    </form>
+</div>

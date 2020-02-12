@@ -1,0 +1,19 @@
+div img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 65%;
+    height: auto;
+}
+
+.footer {
+    position: fixed;
+    left: -10px;
+    bottom: 0;
+    width: 110%;
+    background-color: #bbb8b8;
+    text-align: center;
+}

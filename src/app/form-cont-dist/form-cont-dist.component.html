@@ -1,0 +1,176 @@
+<!-- form-cont-dist.component.html -->
+
+<div style="margin: 0px 20px 5px 20px;">
+    <form [formGroup]="fgContDist" class="form">
+        <!-- Tipo -->
+        <div style="padding: 15px;">
+            <label style="color:rgb(128, 128, 128)">Distribuidora</label> <br>
+            <mat-radio-group matInput formControlName="tipo" #tipo>
+                <mat-radio-button style="padding-right: 15px" [value]="1">Redexis</mat-radio-button>
+                <mat-radio-button style="padding-right: 15px" [value]="2">Nedgia</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <!-- Campaña -->
+        <mat-form-field class="input20">
+            <input maxlength="16" matInput formControlName="campana" placeholder="Campaña" #campana>
+        </mat-form-field>
+
+        <!-- Fecha grabación contrato -->
+        <mat-form-field class="input30">
+            <input matInput formControlName="fechaGrabCont" placeholder="Fecha de grabación del contrato"
+                [matDatepicker]="pickerGrabCont" #fechaGrabCont>
+            <mat-datepicker-toggle matSuffix [for]="pickerGrabCont"></mat-datepicker-toggle>
+            <mat-datepicker #pickerGrabCont></mat-datepicker>
+        </mat-form-field>
+
+        <!-- Fecha grabación certificado -->
+        <mat-form-field class="input30">
+            <input matInput formControlName="fechaGrabCert" placeholder="Fecha de grabación del certificado"
+                [matDatepicker]="pickerGrabCert" #fechaGrabCert>
+            <mat-datepicker-toggle matSuffix [for]="pickerGrabCert"></mat-datepicker-toggle>
+            <mat-datepicker #pickerGrabCert></mat-datepicker>
+        </mat-form-field>
+
+        <br>
+
+        <!-- CUPS -->
+        <mat-form-field class="input31">
+            <input maxlength="32" matInput formControlName="cups" placeholder="CUPS" #cups>
+        </mat-form-field>
+
+        <!-- Número de certificación de la regularización -->
+        <mat-form-field class="input34">
+            <input maxlength="32" matInput formControlName="numCertRegul"
+                placeholder="Número de certificación de la regularización" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let mes of meses" [value]="mes">
+                    {{ mes }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <!-- Regularización -->
+        <mat-form-field class="input15">
+            <input type="number" matInput formControlName="regularizacion" placeholder="Regularización" #regularizacion>
+        </mat-form-field>
+
+        <br>
+
+        <table style="width: 100%;">
+            <tr>
+                <td width="25%">
+                    <!-- Número de certificación de la subvención -->
+                    <mat-form-field class="input100">
+                        <input maxlength="32" matInput formControlName="numCertSubv"
+                            placeholder="Número de certificación de la subvención" [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let mes of meses" [value]="mes">
+                                {{ mes }}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </td>
+                <td width="15%">
+                    <!-- Subvención -->
+                    <mat-form-field class="input100">
+                        <input type="number" matInput formControlName="subvencion" placeholder="Subvención" #subvencion>
+                    </mat-form-field>
+                </td>
+                <td width="15%">
+                    <!-- Subvención facturada -->
+                    <div style="padding: 15px;">
+                        <label style="color:rgb(128, 128, 128)">Subvención facturada</label>
+                        <mat-radio-group class="radio-group" matInput formControlName="subvFacturada" #subvFacturada>
+                            <mat-radio-button class="radio-button" [value]="1">Sí</mat-radio-button>
+                            <mat-radio-button class="radio-button" [value]="0">No</mat-radio-button>
+                            <mat-radio-button class="radio-button" [value]="2">Por partes</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </td>
+                <td width="15%">
+                    <!-- Cobrado subvención -->
+                    <mat-form-field class="input100">
+                        <input type="number" matInput formControlName="cobradoSubv" placeholder="Cobrado subvención"
+                            #cobradoSubv>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <table style="width: 100%;">
+            <tr>
+                <td width="25%">
+                    <!-- Número de certificación de la colaboración -->
+                    <mat-form-field class="input100">
+                        <input maxlength="32" matInput formControlName="numCertColab"
+                            placeholder="Número de certificación de la colaboración" [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let mes of meses" [value]="mes">
+                                {{ mes }}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </td>
+                <td width="15%">
+                    <!-- Colaboración -->
+                    <mat-form-field class="input100">
+                        <input type="number" matInput formControlName="colaboracion" placeholder="Colaboración"
+                            #colaboracion>
+                    </mat-form-field>
+                </td>
+                <td width="15%">
+                    <!-- Colaboración facturada -->
+                    <div style="padding: 15px;">
+                        <label style="color:rgb(128, 128, 128)">Colaboración facturada</label>
+                        <mat-radio-group class="radio-group" matInput formControlName="colabFacturada" #colabFacturada>
+                            <mat-radio-button class="radio-button" [value]="1">Sí</mat-radio-button>
+                            <mat-radio-button class="radio-button" [value]="0">No</mat-radio-button>
+                            <mat-radio-button class="radio-button" [value]="2">Por partes</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </td>
+                <td width="15%">
+                    <!-- Cobrado colaboración -->
+                    <mat-form-field class="input100">
+                        <input type="number" matInput formControlName="cobradoColab" placeholder="Cobrado colaboración"
+                            #cobradoColab>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!-- Número de solicitud de ZEUS -->
+        <mat-form-field class="input31">
+            <input maxlength="32" matInput formControlName="numSolicitudZeus" placeholder="Número de solicitud de ZEUS"
+                #numSolicitudZeus>
+        </mat-form-field>
+
+        <br>
+
+        <table style="width: 100%;">
+            <tr>
+                <td width="15%">
+                    <!-- Subvención IDI -->
+                    <mat-form-field class="input100">
+                        <input type="number" matInput formControlName="subvencionIdi" placeholder="Subvención IDI"
+                            #subvencionIdi>
+                    </mat-form-field>
+                </td>
+                <td width="5%"></td>
+                <td>
+                    <!-- IDI facturado -->
+                    <label style="color:rgb(128, 128, 128)">IDI facturado</label>
+                    <mat-radio-group class="radio-group" matInput formControlName="idiFacturado" #idiFacturado>
+                        <mat-radio-button class="radio-button" [value]="1">Sí</mat-radio-button>
+                        <mat-radio-button class="radio-button" [value]="0">No</mat-radio-button>
+                    </mat-radio-group>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

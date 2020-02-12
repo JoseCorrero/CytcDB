@@ -1,0 +1,44 @@
+<!-- form-cont-com.component.html -->
+
+<div style="margin: 0px 20px 5px 20px;">
+    <form [formGroup]="fgContCom" class="form">
+        <!-- Número de solicitud -->
+        <mat-form-field class="input30">
+            <input maxlength="32" matInput formControlName="numeroSolicitud" placeholder="Número de solicitud"
+                #numeroSolicitud>
+        </mat-form-field>
+
+        <!-- Número de certificación -->
+        <mat-form-field class="input30">
+            <input maxlength="32" matInput formControlName="numeroCertificacion" placeholder="Número de certificación"
+                [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let mes of meses" [value]="mes">
+                    {{ mes }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <br>
+
+        <table style="width: 100%;">
+            <tr>
+                <td width="15%">
+                    <!-- Subvención -->
+                    <mat-form-field class="input100">
+                        <input type="number" matInput formControlName="subvencion" placeholder="Subvención" #subvencion>
+                    </mat-form-field>
+                </td>
+                <td width="10%"></td>
+                <td>
+                    <!-- Facturado -->
+                    <label style="color:rgb(128, 128, 128)">Facturado</label>
+                    <mat-radio-group class="radio-group" matInput formControlName="facturado" #facturado>
+                        <mat-radio-button class="radio-button" [value]="1">Sí</mat-radio-button>
+                        <mat-radio-button class="radio-button" [value]="0">No</mat-radio-button>
+                    </mat-radio-group>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

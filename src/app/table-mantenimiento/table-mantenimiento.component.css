@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+button {
+    margin: 5px;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.mat-column-Opciones {
+    width: 105px !important;
+}
+
+.defcom3 {
+    background-color: yellow;
+}
+
+.defcom2 {
+    background-color: rgb(253, 129, 84);
+}
+
+.defcom1 {
+    background-color: crimson;
+}
+
+.done {
+    background-color: rgb(76, 201, 76);
+}

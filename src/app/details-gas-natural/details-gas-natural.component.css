@@ -1,0 +1,22 @@
+.mat-card, .mat-card-content {
+    margin: 10px;
+}
+
+.mat-card-subtitle {
+    color: black;
+}
+
+.half {
+    display: inline-table;
+    width: 50%;
+}
+
+.booleans td {
+    width: 20%;
+    text-align: center;
+}
+
+.booleans th {
+    width: 20%;
+    text-align: center;
+}

@@ -1,0 +1,80 @@
+<!-- details-butano.component.html -->
+
+<div style="margin: 10px;" align="right">
+    <a mat-flat-button style="margin-right: 8px;" color="primary" (click)="openFolder()">
+        Dropbox
+    </a>
+    
+    <a mat-flat-button color="accent" [routerLink]="['/editar-butano/', id]" class="nav-link"
+        routerLinkActive="active">Editar</a>
+</div>
+
+<mat-card>
+    <mat-card-title align="center">
+        Butano
+    </mat-card-title>
+    <mat-card-content>
+        <div class="half">
+            <mat-card>
+                <p><b>Dirección</b> <br> {{ instalacion.direccion }}</p>
+                <p><b>Población</b> <br> {{ instalacion.poblacion.nombre }}</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Instaladores</b> <br> {{ instalacion.instaladores }}</p>
+                <p><b>Fecha de instalación</b> <br> {{ instalacion.fechaInstalacion }}</p>
+                <p><b>Presupuesto</b> <br> {{ instalacion.presupuesto }} €</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Contratante</b> <br> {{ instalacion.contratante.nombre }}</p>
+                <p><b>Agente comercial</b> <br> {{ instalacion.agente }}</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Observaciones generales</b> <br> {{ instalacion.observaciones }}</p>
+                <p><b>Observaciones de la instalación</b> <br> {{ instalacion.irisc_observaciones }}</p>
+            </mat-card>
+        </div>
+        <div class="half">
+            <mat-card>
+                <p><b>Nombre completo</b> <br> {{ instalacion.iris_nombre }} {{ instalacion.iris_apellidos }}</p>
+                <p><b>DNI</b> <br> {{ instalacion.iris_dni }}</p>
+                <p><b>Teléfonos</b> <br> {{ instalacion.iris_telefonos }}</p>
+            </mat-card>
+
+            <mat-card>
+                <table style="text-align: center;">
+                    <tr>
+                        <th>Cobrado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-icon class="check" *ngIf="instalacion.iris_cobrado == 1">
+                                check
+                            </mat-icon>
+                            <mat-icon class="cancel" *ngIf="instalacion.iris_cobrado == 0">
+                                close
+                            </mat-icon>
+                        </td>
+                    </tr>
+                </table>
+                <p><b>Aparato existente</b> <br> {{ instalacion.iris_aparatoExistente }}</p>
+                <p><b>Aparatos vendidos</b> <br> {{ instalacion.iris_aparatosVendidos }}</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Estado</b> <br> {{ instalacion.irisc_estado.nombre }}</p>
+                <p><b>Fecha del contrato</b> <br> {{ instalacion.irisc_fechaContrato }}</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Fecha de mantenimiento</b> <br> {{ instalacion.irism_fechaMantenimiento }}</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Tipo de trabajo</b> <br> {{ instalacion.irisb_tipoTrabajo.nombre }}</p>
+            </mat-card>
+        </div>
+    </mat-card-content>
+</mat-card>

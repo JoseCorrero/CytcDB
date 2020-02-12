@@ -1,0 +1,61 @@
+<!-- details-irc.component.html -->
+
+<div style="margin: 10px;" align="right">
+    <a mat-flat-button style="margin-right: 8px;" color="primary" (click)="openFolder()">
+        Dropbox
+    </a>
+    
+    <a mat-flat-button color="accent" [routerLink]="['/editar-irc/', id]" class="nav-link"
+        routerLinkActive="active">
+        Editar
+    </a>
+</div>
+
+<mat-card>
+    <mat-card-title align="center">
+        IRC
+    </mat-card-title>
+    <mat-card-content>
+        <div class="half">
+            <mat-card>
+                <p><b>Dirección</b> <br> {{ instalacion.direccion }}</p>
+                <p><b>Población</b> <br> {{ instalacion.poblacion.nombre }}</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Instaladores</b> <br> {{ instalacion.instaladores }}</p>
+                <p><b>Fecha de instalación</b> <br> {{ instalacion.fechaInstalacion }}</p>
+                <p><b>Presupuesto</b> <br> {{ instalacion.presupuesto }} €</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Contratante</b> <br> {{ instalacion.contratante.nombre }}</p>
+                <p><b>Agente comercial</b> <br> {{ instalacion.agente }}</p>
+            </mat-card>
+        </div>
+        <div class="half">
+            <mat-card>
+                <p><b>Observaciones</b> <br> {{ instalacion.observaciones }}</p>
+            </mat-card>
+
+            <mat-card>
+                <p><b>Número de llaves</b> <br> {{ instalacion.irc_numLlaves }}</p>
+                <table style="text-align: center;">
+                        <tr>
+                            <th>Facturado</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-icon class="check" *ngIf="instalacion.irc_facturado == 1">
+                                    check
+                                </mat-icon>
+                                <mat-icon class="cancel" *ngIf="instalacion.irc_facturado == 0">
+                                    close
+                                </mat-icon>
+                            </td>
+                        </tr>
+                    </table>
+            </mat-card>
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,60 @@
+<!-- crear-gas-natural.component.html -->
+
+<mat-card>
+    <mat-card-title align="center">
+        Gas natural
+    </mat-card-title>
+
+    <mat-card-content>
+        <div class="container">
+            <div class="full-form">
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Datos generales
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <app-form-instalacion></app-form-instalacion>
+                </mat-expansion-panel>
+
+                <br>
+
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Datos IRIS
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <app-form-iris></app-form-iris>
+                </mat-expansion-panel>
+
+                <br>
+
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Datos Completa
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <app-form-completa></app-form-completa>
+                </mat-expansion-panel>
+
+                <br>
+
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Datos GN
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <app-form-gas-natural></app-form-gas-natural>
+                </mat-expansion-panel>
+            </div>
+
+            <div align="center">
+                <button mat-flat-button color="accent" (click)="create()" [disabled]="validate()"
+                    style="margin: 4px;">Guardar</button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,71 @@
+<!-- form-instalacion.component.html -->
+
+<div style="margin: 0px 20px 5px 20px;">
+    <form [formGroup]="fgInstalacion" class="form">
+        <!-- Dirección -->
+        <mat-form-field class="input65">
+            <input maxlength="128" matInput formControlName="direccion" placeholder="Dirección" #direccion>
+        </mat-form-field>
+
+        <!-- Población -->
+        <mat-form-field class="input20">
+            <mat-select formControlName="poblacion" placeholder="Población" #poblacion>
+                <mat-option [value]="null"></mat-option>
+                <mat-optgroup *ngFor="let provincia of provincias" [label]="provincia.nombre"
+                    [disabled]="provincia.disabled">
+                    <mat-option *ngFor="let poblacion of provincia.poblaciones" [value]="poblacion.id">
+                        {{ poblacion.nombre }}
+                    </mat-option>
+                </mat-optgroup>
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-icon-button (click)="openDialog()" matTooltip="Añadir nueva población">
+            <mat-icon>playlist_add</mat-icon>
+        </button>
+
+        <br>
+
+        <!-- Fecha instalación -->
+        <mat-form-field class="input20">
+            <input matInput formControlName="fechaInstalacion" placeholder="Fecha de instalación"
+                [matDatepicker]="pickerInstalacion" #fechaInstalacion>
+            <mat-datepicker-toggle matSuffix [for]="pickerInstalacion"></mat-datepicker-toggle>
+            <mat-datepicker #pickerInstalacion></mat-datepicker>
+        </mat-form-field>
+
+        <!-- Instaladores -->
+        <mat-form-field class="input45">
+            <input maxlength="64" matInput formControlName="instaladores" placeholder="Instaladores" #instaladores>
+        </mat-form-field>
+
+        <br>
+
+        <!-- Contratante -->
+        <mat-form-field class="input20">
+            <mat-select formControlName="contratante" placeholder="Contratante" #contratante>
+                <mat-option [value]="null"></mat-option>
+                <mat-option *ngFor="let contratante of contratantes" [value]="contratante.id">
+                    {{ contratante.nombre }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- Agente -->
+        <mat-form-field class="input30">
+            <input maxlength="32" matInput formControlName="agente" placeholder="Agente comercial" #agente>
+        </mat-form-field>
+
+        <!-- Presupuesto -->
+        <mat-form-field class="input15">
+            <input type="number" matInput formControlName="presupuesto" placeholder="Presupuesto" #presupuesto>
+        </mat-form-field>
+
+        <!-- Observaciones generales -->
+        <mat-form-field class="input100">
+            <textarea maxlength="512" rows="9" matInput formControlName="observaciones"
+                placeholder="Observaciones generales" #observaciones></textarea>
+            <mat-hint align="end"> {{ observaciones.value.length }} / 512 </mat-hint>
+        </mat-form-field>
+    </form>
+</div>

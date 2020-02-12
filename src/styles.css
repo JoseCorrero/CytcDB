@@ -1,1 +1,134 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/ng2-slim-loading-bar/style.css";
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/*
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+*/
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+form {
+    width: 100%;
+}
+
+.full-form {
+    padding: 15px;
+}
+
+.input10 {
+    width: 10%;
+    padding: 15px;
+}
+
+.input15 {
+    width: 15%;
+    padding: 15px;
+}
+
+.input20 {
+    width: 20%;
+    padding: 15px;
+}
+
+.input25 {
+    width: 25%;
+    padding: 15px;
+}
+
+.input30 {
+    width: 30%;
+    padding: 15px;
+}
+
+.input31 {
+    width: 31%;
+    padding: 15px;
+}
+
+.input34 {
+    width: 34%;
+    padding: 15px;
+}
+
+.input35 {
+    width: 35%;
+    padding: 15px;
+}
+
+.input40 {
+    width: 40%;
+    padding: 15px;
+}
+
+.input45 {
+    width: 45%;
+    padding: 15px;
+}
+
+.input50 {
+    width: 50%;
+    padding: 15px;
+}
+
+.input60 {
+    width: 60%;
+    padding: 15px;
+}
+
+.input65 {
+    width: 65%;
+    padding: 15px;
+}
+
+.input70 {
+    width: 70%;
+    padding: 15px;
+}
+
+.input80 {
+    width: 80%;
+    padding: 15px;
+}
+
+.input100 {
+    width: 100%;
+    padding: 15px;
+}
+
+.radio-group {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-expansion-panel-content>.mat-expansion-panel-body {
+    padding: 0 !important;
+}
+
+.toggle-bar-tables {
+    background-color: #fafafa;
+}
+
+.check {
+    color: green;
+}
+
+.cancel {
+    color: red;
+}
+
+.por-partes {
+    color: grey;
+}

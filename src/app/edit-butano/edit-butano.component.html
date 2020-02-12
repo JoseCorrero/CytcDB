@@ -1,0 +1,71 @@
+<!-- edit-butano.component.html -->
+
+<div class="container">
+    <div class="full-form">
+        <div align="right">
+            <button *ngIf="!esBaja" mat-flat-button color="warn" (click)="switchEsBaja()">Dar de baja</button>
+            <button *ngIf="esBaja" mat-flat-button color="primary" (click)="switchEsBaja()">Dar de alta</button>
+        </div>
+
+        <br>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Datos generales
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-form-instalacion></app-form-instalacion>
+        </mat-expansion-panel>
+
+        <br>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Datos IRIS
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-form-iris></app-form-iris>
+        </mat-expansion-panel>
+
+        <br>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Datos Completa
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-form-completa></app-form-completa>
+        </mat-expansion-panel>
+            
+        <br>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Datos Mantenimiento
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-form-mantenimiento></app-form-mantenimiento>
+        </mat-expansion-panel>
+
+        <br>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Datos Butano
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-form-butano></app-form-butano>
+        </mat-expansion-panel>
+    </div>
+
+    <div align="center">
+        <button mat-flat-button color="accent" (click)="update()" [disabled]="validate()"
+            style="margin: 4px;">Guardar</button>
+    </div>
+
+</div>

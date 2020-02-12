@@ -1,0 +1,58 @@
+<!-- form-iris.component.html -->
+
+<div style="margin: 0px 20px 5px 20px;">
+    <form [formGroup]="fgIris" class="form">
+        <!-- Nombre -->
+        <mat-form-field class="input30">
+            <input maxlength="64" matInput formControlName="nombre" placeholder="Nombre" #nombre>
+        </mat-form-field>
+
+        <!-- Apellidos -->
+        <mat-form-field class="input40">
+            <input maxlength="64" matInput formControlName="apellidos" placeholder="Apellidos" #apellidos>
+        </mat-form-field>
+
+        <!-- Dni -->
+        <mat-form-field class="input15">
+            <input maxlength="9" matInput formControlName="dni" placeholder="Dni" #dni>
+        </mat-form-field>
+
+        <br>
+
+        <table style="width:100%">
+            <tr>
+                <td width="30%">
+                    <!-- Teléfonos -->
+                    <mat-form-field class="input100">
+                        <textarea maxlength="64" rows="5" matInput formControlName="telefonos" placeholder="Teléfonos"
+                            #telefonos></textarea>
+                        <mat-hint align="end"> {{ telefonos.value.length }} / 64 </mat-hint>
+                    </mat-form-field>
+                </td>
+                <td width="10%"></td>
+                <td>
+                    <!-- Cobrado -->
+                    <label style="color:rgb(128, 128, 128)">Cobrado</label>
+                    <mat-radio-group class="radio-group" matInput formControlName="cobrado" #cobrado>
+                        <mat-radio-button class="radio-button" [value]="1">Sí</mat-radio-button>
+                        <mat-radio-button class="radio-button" [value]="0">No</mat-radio-button>
+                    </mat-radio-group>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!-- Aparato existente -->
+        <mat-form-field class="input35">
+            <input maxlength="32" matInput formControlName="aparatoExistente" placeholder="Aparato existente"
+                #aparatoExistente>
+        </mat-form-field>
+
+        <!-- Aparatos vendidos -->
+        <mat-form-field class="input60">
+            <input maxlength="64" matInput formControlName="aparatosVendidos" placeholder="Aparatos vendidos"
+                #aparatosVendidos>
+        </mat-form-field>
+    </form>
+</div>

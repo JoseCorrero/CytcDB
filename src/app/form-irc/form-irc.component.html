@@ -1,0 +1,26 @@
+<!-- form-irc.component.html -->
+
+<div style="margin: 0px 20px 5px 20px;">
+    <form [formGroup]="fgIrc" class="form">
+        <table style="width: 100%;">
+            <tr>
+                <td width="20%">
+                    <!-- Número llaves -->
+                    <mat-form-field class="input100">
+                        <input type="number" min="0" matInput formControlName="numLlaves" placeholder="Número de llaves"
+                            #numLlaves>
+                    </mat-form-field>
+                </td>
+                <td width="10%"></td>
+                <td>
+                    <!-- Facturado -->
+                    <label style="color:rgb(128, 128, 128)">Facturado</label>
+                    <mat-radio-group class="radio-group" formControlName="facturado" #facturado>
+                        <mat-radio-button class="radio-button" [value]="1">Sí</mat-radio-button>
+                        <mat-radio-button class="radio-button" [value]="0">No</mat-radio-button>
+                    </mat-radio-group>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<!-- form-butano.component.html -->
+
+<div style="margin: 0px 20px 5px 20px;">
+    <form [formGroup]="fgButano" class="form">
+        <!-- Tipo de trabajo -->
+        <mat-form-field class="input20">
+            <mat-select formControlName="tipoTrabajo" placeholder="Tipo de trabajo" #tipoTrabajo>
+                <mat-option [value]="null"></mat-option>
+                <mat-option *ngFor="let trabajo of trabajos" [value]="trabajo.id">
+                    {{ trabajo.nombre }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>

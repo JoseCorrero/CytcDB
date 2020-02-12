@@ -1,0 +1,120 @@
+<!-- form-gas-natural.component.html -->
+
+<div style="margin: 0px 20px 5px 20px;">
+    <form [formGroup]="fgGasNatural" class="form">
+        <!-- Mercado -->
+        <mat-form-field class="input20">
+            <mat-select formControlName="mercado" placeholder="Mercado" #mercado>
+                <mat-option [value]="null"></mat-option>
+                <mat-option *ngFor="let mercado of mercados" [value]="mercado.id">
+                    {{ mercado.nombre }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- Fecha de puesta en gas -->
+        <mat-form-field class="input20">
+            <input matInput formControlName="fechaPuestaGas" placeholder="Fecha de puesta en gas"
+                [matDatepicker]="pickerPuestaGas" #fechaPuestaGas>
+            <mat-datepicker-toggle matSuffix [for]="pickerPuestaGas"></mat-datepicker-toggle>
+            <mat-datepicker #pickerPuestaGas></mat-datepicker>
+        </mat-form-field>
+
+        <br>
+
+        <!-- Tipos de aparato -->
+        <mat-form-field class="input30">
+            <input maxlength="32" matInput formControlName="tiposAparato" placeholder="Tipos de aparato" #tiposAparato>
+        </mat-form-field>
+
+        <!-- Piezas -->
+        <mat-form-field class="input40">
+            <textarea maxlength="64" rows="3" matInput formControlName="piezas" placeholder="Piezas" #piezas></textarea>
+            <mat-hint align="end"> {{ piezas.value.length }} / 64 </mat-hint>
+        </mat-form-field>
+
+        <br>
+
+        <table style="width: 100%;">
+            <tr>
+                <td width="20%" style="padding: 15px;">
+                    <!-- Tiro forzado -->
+                    <label style="color:rgb(128, 128, 128)">Tiro forzado</label>
+                    <mat-radio-group class="radio-group" matInput formControlName="tiroForzado" #tiroForzado>
+                        <mat-radio-button class="radio-button" [value]="1">Sí</mat-radio-button>
+                        <mat-radio-button class="radio-button" [value]="0">No</mat-radio-button>
+                    </mat-radio-group>
+                </td>
+
+                <td width="20%">
+                    <!-- Soporte exterior -->
+                    <label style="color:rgb(128, 128, 128)">Soporte exterior</label>
+                    <mat-radio-group class="radio-group" matInput formControlName="soporteExterior" #soporteExterior>
+                        <mat-radio-button class="radio-button" [value]="1">Sí</mat-radio-button>
+                        <mat-radio-button class="radio-button" [value]="0">No</mat-radio-button>
+                    </mat-radio-group>
+                </td>
+
+                <td width="20%">
+                    <!-- IDI -->
+                    <label style="color:rgb(128, 128, 128)">IDI</label>
+                    <mat-radio-group class="radio-group" matInput formControlName="idi" #idi>
+                        <mat-radio-button class="radio-button" [value]="1">Sí</mat-radio-button>
+                        <mat-radio-button class="radio-button" [value]="0">No</mat-radio-button>
+                    </mat-radio-group>
+                </td>
+
+                <td width="20%">
+                    <!-- Facturado 1 -->
+                    <label style="color:rgb(128, 128, 128)">Facturado 1</label>
+                    <mat-radio-group class="radio-group" matInput formControlName="facturado1" #facturado1>
+                        <mat-radio-button class="radio-button" [value]="1">Sí</mat-radio-button>
+                        <mat-radio-button class="radio-button" [value]="0">No</mat-radio-button>
+                    </mat-radio-group>
+                </td>
+
+                <td width="20%">
+                    <!-- Facturado 2 -->
+                    <label style="color:rgb(128, 128, 128)">Facturado 2</label>
+                    <mat-radio-group class="radio-group" matInput formControlName="facturado2" #facturado2>
+                        <mat-radio-button class="radio-button" [value]="1">Sí</mat-radio-button>
+                        <mat-radio-button class="radio-button" [value]="0">No</mat-radio-button>
+                    </mat-radio-group>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!-- Contrato comercializadora -->
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Contrato comercializadora
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-form-cont-com></app-form-cont-com>
+        </mat-expansion-panel>
+
+        <br>
+
+        <!-- Contrato distribuidora -->
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Contrato distribuidora
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-form-cont-dist></app-form-cont-dist>
+        </mat-expansion-panel>
+
+        <br>
+
+        <!-- Observaciones de contratos -->
+        <mat-form-field class="input100">
+            <textarea maxlength="512" rows="9" matInput formControlName="contObservaciones"
+                placeholder="Observaciones de contratos" #contObservaciones></textarea>
+            <mat-hint align="end"> {{ contObservaciones.value.length }} / 512 </mat-hint>
+        </mat-form-field>
+    </form>
+</div>

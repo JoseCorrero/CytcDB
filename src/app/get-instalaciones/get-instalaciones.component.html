@@ -1,0 +1,98 @@
+<!-- get-instalaciones.component.html -->
+
+<mat-divider></mat-divider>
+<div class="toggle-bar-tables">
+    <mat-slide-toggle class="slide-toggle" (click)="drawer.toggle()">Filtros</mat-slide-toggle>
+</div>
+<mat-divider></mat-divider>
+
+<mat-drawer-container class="full-height">
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <form [formGroup]="fgFiltros" class="form" novalidate>
+            <div align="left" class="button-row">
+                <!-- Buscar -->
+                <button mat-flat-button color="primary" (click)="search()" [disabled]="validate()">
+                    <mat-icon>search</mat-icon>
+                </button>
+
+                <!-- Limpiar filtros -->
+                <button mat-stroked-button (click)="clear()">
+                    <mat-icon>clear_all</mat-icon>
+                </button>
+            </div>
+
+            <br>
+
+            <!-- Dirección -->
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Dirección" formControlName="direccion" #direccion>
+            </mat-form-field>
+
+            <!-- Población -->
+            <mat-form-field class="full-width">
+                <mat-select formControlName="poblacion" placeholder="Población" #poblacion>
+                    <mat-option [value]="null"></mat-option>
+                    <mat-optgroup *ngFor="let provincia of provincias" [label]="provincia.nombre"
+                        [disabled]="provincia.disabled">
+                        <mat-option *ngFor="let poblacion of provincia.poblaciones" [value]="poblacion.id">
+                            {{ poblacion.nombre }}
+                        </mat-option>
+                    </mat-optgroup>
+                </mat-select>
+            </mat-form-field>
+
+            <!-- Apellidos -->
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Apellidos" formControlName="apellidos" #apellidos>
+            </mat-form-field>
+
+            <!-- PreFecha -->
+            <mat-form-field class="fechas" style="margin-right: 18px;">
+                <input matInput formControlName="preFecha" placeholder="Desde" [matDatepicker]="pickerPreFecha"
+                    #preFecha>
+                <mat-datepicker-toggle matSuffix [for]="pickerPreFecha"></mat-datepicker-toggle>
+                <mat-datepicker #pickerPreFecha></mat-datepicker>
+            </mat-form-field>
+
+            <!-- PostFecha -->
+            <mat-form-field class="fechas">
+                <input matInput formControlName="postFecha" placeholder="Hasta" [matDatepicker]="pickerPostFecha"
+                    #postFecha>
+                <mat-datepicker-toggle matSuffix [for]="pickerPostFecha"></mat-datepicker-toggle>
+                <mat-datepicker #pickerPostFecha></mat-datepicker>
+            </mat-form-field>
+
+            <!-- Contratante -->
+            <mat-form-field class="full-width">
+                <mat-select formControlName="contratante" placeholder="Contratante" #contratante>
+                    <mat-option [value]="null"></mat-option>
+                    <mat-option *ngFor="let contratante of contratantes" [value]="contratante.id">
+                        {{ contratante.nombre }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </mat-drawer>
+
+    <mat-tab-group mat-align-tabs="center" animationDuration="0ms">
+        <mat-tab label="IRC ({{tableIrc.dataSource.data.length}})">
+            <app-table-inst #ircs tipo="1"></app-table-inst>
+        </mat-tab>
+
+        <mat-tab label="Gas natural ({{tableGasNatural.dataSource.data.length}})">
+            <app-table-inst #gasnatural tipo="2"></app-table-inst>
+        </mat-tab>
+
+        <mat-tab label="Butano ({{tableButano.dataSource.data.length}})">
+            <app-table-inst #butano tipo="3"></app-table-inst>
+        </mat-tab>
+
+        <mat-tab label="Solar ({{tableSolar.dataSource.data.length}})">
+            <app-table-inst #solar tipo="4"></app-table-inst>
+        </mat-tab>
+
+        <mat-tab label="Otros ({{tableOtros.dataSource.data.length}})">
+            <app-table-inst #otros tipo="5"></app-table-inst>
+        </mat-tab>
+    </mat-tab-group>
+</mat-drawer-container>
