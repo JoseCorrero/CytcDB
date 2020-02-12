@@ -58,7 +58,8 @@ export class CrearGasNaturalComponent implements OnInit {
       this.formGasNatural.fgContCom.get('subvencion').value,
       this.formGasNatural.fgContCom.get('numeroSolicitud').value,
       this.formGasNatural.fgContCom.get('facturado').value,
-      this.formGasNatural.fgContCom.get('numeroCertificacion').value
+      this.formGasNatural.fgContCom.get('numeroCertificacion').value,
+      this.formGasNatural.fgContCom.get('fechaGrabCont').value
     ).subscribe((resCom: any) => {
       this.distServ.addContDist(  // Crear contrato distribuidora
         this.formGasNatural.fgContDist.get('campana').value,

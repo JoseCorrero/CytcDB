@@ -7,10 +7,10 @@ function createRouter(db) {
 
   router.post('/contComs/add', (req, res, next) => {
     query = 'INSERT INTO ContratoComercializadora (' + 
-            'Subvencion, NumeroSolicitud, Facturado, NumeroCertificacion) ' + 
+            'Subvencion, NumeroSolicitud, Facturado, NumeroCertificacion, FechaGrabCont) ' + 
             'VALUES (' + 
             `${req.body.subvencion}, '${req.body.numeroSolicitud}', ` + 
-            `${req.body.facturado}, '${req.body.numeroCertificacion}')`;
+            `${req.body.facturado}, '${req.body.numeroCertificacion}', ${req.body.fechaGrabCont})`;
 
     db.query(
       query,
@@ -28,7 +28,7 @@ function createRouter(db) {
   });
 
   router.get('/contComs', function (req, res, next) {
-    query = `SELECT Id, Subvencion, NumeroSolicitud, Facturado, NumeroCertificacion ` + 
+    query = `SELECT Id, Subvencion, NumeroSolicitud, Facturado, NumeroCertificacion, FechaGrabCont ` + 
             `FROM ContratoComercializadora WHERE ` + 
              (req.query.numeroSolicitud != '' ? `NumeroSolicitud LIKE '%${req.query.numeroSolicitud}%' AND ` : ``) + 
              (req.query.numeroCertificacion != '' ? `NumeroCertificacion LIKE '%${req.query.numeroCertificacion}%' AND ` : ``) + 
@@ -50,7 +50,7 @@ function createRouter(db) {
 
   router.get('/contComs/:id', function (req, res, next) {
     db.query(
-      'SELECT Id, Subvencion, NumeroSolicitud, Facturado, NumeroCertificacion ' + 
+      'SELECT Id, Subvencion, NumeroSolicitud, Facturado, NumeroCertificacion, FechaGrabCont ' + 
       'FROM ContratoComercializadora WHERE Id = ?',
       [req.params.id],
       (error, results) => {
@@ -67,7 +67,8 @@ function createRouter(db) {
   router.put('/contComs/update/:id', function (req, res, next) {
     query = 'UPDATE ContratoComercializadora SET ' + 
             `Subvencion = ${req.body.subvencion}, NumeroSolicitud = '${req.body.numeroSolicitud}', ` +
-            `Facturado = ${req.body.facturado}, NumeroCertificacion = '${req.body.numeroCertificacion}' ` + 
+            `Facturado = ${req.body.facturado}, NumeroCertificacion = '${req.body.numeroCertificacion}', ` + 
+            `FechaGrabCont = ${req.body.fechaGrabCont} ` +
             `WHERE Id = ${req.params.id}`;
 
     db.query(

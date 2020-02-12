@@ -14,15 +14,18 @@ export class ContComsService {
 
   constructor(private http: HttpClient) { }
 
-  addContCom(subvencion, numeroSolicitud, facturado, numeroCertificacion) {
+  addContCom(subvencion, numeroSolicitud, facturado, numeroCertificacion, fechaGrabCont) {
     numeroSolicitud = DataToSql.stringToSql(numeroSolicitud);
     numeroCertificacion = DataToSql.stringToSql(numeroCertificacion);
+    
+    fechaGrabCont = DataToSql.dateToSql(fechaGrabCont);
 
     const obj = {
       subvencion, 
       numeroSolicitud, 
       facturado, 
-      numeroCertificacion
+      numeroCertificacion,
+      fechaGrabCont
     };
     return this.http
             .post(`${this.uri}/add`, obj);
@@ -46,15 +49,18 @@ export class ContComsService {
             .get(`${this.uri}/${id}`);
   }
 
-  updateContCom(id, subvencion, numeroSolicitud, facturado, numeroCertificacion) {
+  updateContCom(id, subvencion, numeroSolicitud, facturado, numeroCertificacion, fechaGrabCont) {
     numeroSolicitud = DataToSql.stringToSql(numeroSolicitud);
     numeroCertificacion = DataToSql.stringToSql(numeroCertificacion);
+    
+    fechaGrabCont = DataToSql.dateToSql(fechaGrabCont);
 
     const obj = {
       subvencion, 
       numeroSolicitud, 
       facturado, 
-      numeroCertificacion
+      numeroCertificacion,
+      fechaGrabCont
     };
     return this.http
             .put(`${this.uri}/update/${id}`, obj);

@@ -19,6 +19,14 @@
             </mat-autocomplete>
         </mat-form-field>
 
+        <!-- Fecha grabación contrato -->
+        <mat-form-field class="input30">
+            <input matInput formControlName="fechaGrabCont" placeholder="Fecha de grabación del contrato"
+                [matDatepicker]="pickerGrabCont" #fechaGrabCont>
+            <mat-datepicker-toggle matSuffix [for]="pickerGrabCont"></mat-datepicker-toggle>
+            <mat-datepicker #pickerGrabCont></mat-datepicker>
+        </mat-form-field>
+
         <br>
 
         <table style="width: 100%;">

@@ -152,6 +152,8 @@
 
                     <div class="half">
                         <mat-card>
+                            <p><b>Fecha de grabación del contrato</b> <br>
+                            {{ instalacion.irisgn_contCom.fechaGrabCont }}</p>
                             <p><b>Número de certificación</b> <br> {{ instalacion.irisgn_contCom.numeroCertificacion }}
                             </p>
                             <table style="text-align: center;">
@@ -174,11 +176,14 @@
                 </mat-card-content>
             </mat-card>
             <mat-card>
-                <mat-card-subtitle *ngIf="instalacion.irisgn_contDist.tipo == 1" align="center">
-                    Distribuidora <br> Redexis
-                </mat-card-subtitle>
-                <mat-card-subtitle *ngIf="instalacion.irisgn_contDist.tipo == 2" align="center">
-                    Distribuidora <br> Nedgia
+                <mat-card-subtitle align="center">
+                    Distribuidora
+                    <p *ngIf="instalacion.irisgn_contDist.tipo == 1" align="center">
+                        Redexis
+                    </p>
+                    <p *ngIf="instalacion.irisgn_contDist.tipo == 2" align="center">
+                        Nedgia
+                    </p>    
                 </mat-card-subtitle>
                 <mat-card-content>
                     <div class="half">

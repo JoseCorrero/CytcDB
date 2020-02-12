@@ -119,7 +119,8 @@ export class DetailsGasNaturalComponent implements OnInit {
                 com.Subvencion,
                 com.NumeroSolicitud,
                 com.Facturado,
-                com.NumeroCertificacion);
+                com.NumeroCertificacion,
+                com.FechaGrabCont ? new Date(com.FechaGrabCont).toLocaleDateString("es-ES", options) : null,);
             });
 
           if (instalacion.IRISGN_Id_ContDist)

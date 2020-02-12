@@ -26,7 +26,8 @@ export class FormContComComponent implements OnInit {
       subvencion: [ null , Validators.compose([Validators.max(99999999.99), Validators.min(0)]) ],
       numeroSolicitud: [ '' ], 
       facturado: [ null ], 
-      numeroCertificacion: [ '' ]
+      numeroCertificacion: [ '' ],
+      fechaGrabCont: [ null ]
     });
   }
 }

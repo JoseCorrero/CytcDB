@@ -96,6 +96,7 @@ export class EditGasNaturalComponent implements OnInit {
             this.formGasNatural.fgContCom.get('numeroSolicitud').setValue(contCom.NumeroSolicitud);
             this.formGasNatural.fgContCom.get('facturado').setValue(contCom.Facturado);
             this.formGasNatural.fgContCom.get('numeroCertificacion').setValue(contCom.NumeroCertificacion);
+            this.formGasNatural.fgContCom.get('fechaGrabCont').setValue(contCom.FechaGrabCont);
           });
 
           this.distServ.getContDist(this.idContDist).subscribe((contDist: any) => {
@@ -147,7 +148,8 @@ export class EditGasNaturalComponent implements OnInit {
       this.formGasNatural.fgContCom.get('subvencion').value,
       this.formGasNatural.fgContCom.get('numeroSolicitud').value,
       this.formGasNatural.fgContCom.get('facturado').value,
-      this.formGasNatural.fgContCom.get('numeroCertificacion').value
+      this.formGasNatural.fgContCom.get('numeroCertificacion').value,
+      this.formGasNatural.fgContCom.get('fechaGrabCont').value
     ).subscribe((resCom: any) => {
       this.distServ.updateContDist(  // Actualizar contrato distribuidora
         this.idContDist,
