@@ -49,6 +49,7 @@ export class DetailsIrcComponent implements OnInit {
             instalacion.Agente,
             instalacion.Instaladores,
             instalacion.Presupuesto,
+            instalacion.IRIS_Cobrado,
             instalacion.Observaciones,
             instalacion.IRC_NumLlaves,
             instalacion.IRC_Facturado);

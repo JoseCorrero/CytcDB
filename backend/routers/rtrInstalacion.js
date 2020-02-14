@@ -9,7 +9,7 @@ function createRouter(db) {
 
     query = 'INSERT INTO Instalacion (' +
             'EsBaja, Direccion, Id_Poblacion, Id_Contratante, FechaInstalacion, ' +
-            'Agente, Instaladores, Presupuesto, Observaciones, ';
+            'Agente, Instaladores, Presupuesto, IRIS_Cobrado, Observaciones, ';
 
     if(req.body.tipo == 1) // IRC
         query += 'IRC_NumLlaves, IRC_Facturado, ';
@@ -18,7 +18,7 @@ function createRouter(db) {
             req.body.tipo == 4 || req.body.tipo == 5) { // IRIS
         
         query += 'IRIS_Nombre, IRIS_Apellidos, IRIS_Dni, IRIS_Telefonos, ' +
-                'IRIS_Cobrado, IRIS_AparatoExistente, IRIS_AparatosVendidos, ';
+                'IRIS_AparatoExistente, IRIS_AparatosVendidos, ';
         
         if(req.body.tipo == 2 || req.body.tipo == 3 || req.body.tipo == 4) {
 
@@ -42,7 +42,7 @@ function createRouter(db) {
     query += 'Tipo) VALUES (' +
             `${req.body.esBaja}, '${req.body.direccion}', ${req.body.id_poblacion}, ` + 
             `${req.body.id_contratante}, ${req.body.fechaInstalacion}, '${req.body.agente}', ` + 
-            `'${req.body.instaladores}', ${req.body.presupuesto}, '${req.body.observaciones}', `;
+            `'${req.body.instaladores}', ${req.body.presupuesto}, ${req.body.iris_cobrado}, '${req.body.observaciones}', `;
 
     if(req.body.tipo == 1) // IRC
         query += `${req.body.irc_numLlaves}, ${req.body.irc_facturado}, `;
@@ -51,7 +51,7 @@ function createRouter(db) {
             req.body.tipo == 4 || req.body.tipo == 5) { // IRIS
         
         query += `'${req.body.iris_nombre}', '${req.body.iris_apellidos}', '${req.body.iris_dni}', '${req.body.iris_telefonos}', ` + 
-                `${req.body.iris_cobrado}, '${req.body.iris_aparatoExistente}', '${req.body.iris_aparatosVendidos}', `;
+                `'${req.body.iris_aparatoExistente}', '${req.body.iris_aparatosVendidos}', `;
         
         if(req.body.tipo == 2 || req.body.tipo == 3 || req.body.tipo == 4) {
 
@@ -73,7 +73,7 @@ function createRouter(db) {
     }
 
     query += `${req.body.tipo})`;
-    
+
     db.query(
       query,
       [],
@@ -119,7 +119,7 @@ function createRouter(db) {
 
     query = 'SELECT Id, ' +
             'EsBaja, Direccion, Id_Poblacion, Id_Contratante, FechaInstalacion, ' +
-            'Agente, Instaladores, Presupuesto, Observaciones, ';
+            'Agente, Instaladores, Presupuesto, IRIS_Cobrado, Observaciones, ';
 
     if(req.query.tipo == 1) // IRC
         query += 'IRC_NumLlaves, IRC_Facturado, ';
@@ -128,7 +128,7 @@ function createRouter(db) {
             req.query.tipo == 4 || req.query.tipo == 5) { // IRIS
         
         query += 'IRIS_Nombre, IRIS_Apellidos, IRIS_Dni, IRIS_Telefonos, ' +
-                'IRIS_Cobrado, IRIS_AparatoExistente, IRIS_AparatosVendidos, ';
+                'IRIS_AparatoExistente, IRIS_AparatosVendidos, ';
         
         if(req.query.tipo == 2 || req.query.tipo == 3 || req.query.tipo == 4) {
 
@@ -169,7 +169,7 @@ function createRouter(db) {
     query = 'UPDATE Instalacion SET ' +
             `EsBaja = ${req.body.esBaja}, Direccion = '${req.body.direccion}', Id_Poblacion = ${req.body.id_poblacion}, ` + 
             `Id_Contratante = ${req.body.id_contratante}, FechaInstalacion = ${req.body.fechaInstalacion}, Agente = '${req.body.agente}', ` + 
-            `Instaladores = '${req.body.instaladores}', Presupuesto = ${req.body.presupuesto}, Observaciones = '${req.body.observaciones}', `;
+            `Instaladores = '${req.body.instaladores}', Presupuesto = ${req.body.presupuesto}, IRIS_Cobrado = ${req.body.iris_cobrado}, Observaciones = '${req.body.observaciones}', `;
 
     if(req.body.tipo == 1) // IRC
         query += `IRC_NumLlaves = ${req.body.irc_numLlaves}, IRC_Facturado = ${req.body.irc_facturado}, `;
@@ -178,7 +178,7 @@ function createRouter(db) {
             req.body.tipo == 4 || req.body.tipo == 5) { // IRIS
         
         query += `IRIS_Nombre = '${req.body.iris_nombre}', IRIS_Apellidos = '${req.body.iris_apellidos}', IRIS_Dni = '${req.body.iris_dni}', IRIS_Telefonos = '${req.body.iris_telefonos}', ` +
-                `IRIS_Cobrado = ${req.body.iris_cobrado}, IRIS_AparatoExistente = '${req.body.iris_aparatoExistente}', IRIS_AparatosVendidos = '${req.body.iris_aparatosVendidos}', `;
+                `IRIS_AparatoExistente = '${req.body.iris_aparatoExistente}', IRIS_AparatosVendidos = '${req.body.iris_aparatosVendidos}', `;
         
         if(req.body.tipo == 2 || req.body.tipo == 3 || req.body.tipo == 4) { // Completa
 

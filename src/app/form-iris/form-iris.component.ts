@@ -22,7 +22,6 @@ export class FormIrisComponent implements OnInit {
       apellidos: [ '' ],
       dni: [ '' ],
       telefonos: [ '' ],
-      cobrado: [ null ],
       aparatoExistente: [ '' ],
       aparatosVendidos: [ '' ]
     });

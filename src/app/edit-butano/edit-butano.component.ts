@@ -64,12 +64,12 @@ export class EditButanoComponent implements OnInit {
           this.fgInstalacion.get('agente').setValue(instalacion.Agente);
           this.fgInstalacion.get('instaladores').setValue(instalacion.Instaladores);
           this.fgInstalacion.get('presupuesto').setValue(instalacion.Presupuesto);
+          this.fgInstalacion.get('cobrado').setValue(instalacion.IRIS_Cobrado),
           this.fgInstalacion.get('observaciones').setValue(instalacion.Observaciones);
           this.fgIris.get('nombre').setValue(instalacion.IRIS_Nombre); // IRIS
           this.fgIris.get('apellidos').setValue(instalacion.IRIS_Apellidos);
           this.fgIris.get('dni').setValue(instalacion.IRIS_Dni);
           this.fgIris.get('telefonos').setValue(instalacion.IRIS_Telefonos);
-          this.fgIris.get('cobrado').setValue(instalacion.IRIS_Cobrado);
           this.fgIris.get('aparatoExistente').setValue(instalacion.IRIS_AparatoExistente);
           this.fgIris.get('aparatosVendidos').setValue(instalacion.IRIS_AparatosVendidos);
           this.fgCompleta.get('estado').setValue(instalacion.IRISC_Id_Estado); // Completa
@@ -120,13 +120,13 @@ export class EditButanoComponent implements OnInit {
       this.fgInstalacion.get('agente').value, 
       this.fgInstalacion.get('instaladores').value, 
       this.fgInstalacion.get('presupuesto').value, 
+      this.fgInstalacion.get('cobrado').value,
       this.fgInstalacion.get('observaciones').value, 
       null, null, // IRC
       this.fgIris.get('nombre').value, // IRIS
       this.fgIris.get('apellidos').value, 
       this.fgIris.get('dni').value, 
       this.fgIris.get('telefonos').value, 
-      this.fgIris.get('cobrado').value, 
       this.fgIris.get('aparatoExistente').value, 
       this.fgIris.get('aparatosVendidos').value, 
       this.fgCompleta.get('estado').value, // Completa

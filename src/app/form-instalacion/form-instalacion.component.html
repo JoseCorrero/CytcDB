@@ -41,25 +41,43 @@
 
         <br>
 
-        <!-- Contratante -->
-        <mat-form-field class="input20">
-            <mat-select formControlName="contratante" placeholder="Contratante" #contratante>
-                <mat-option [value]="null"></mat-option>
-                <mat-option *ngFor="let contratante of contratantes" [value]="contratante.id">
-                    {{ contratante.nombre }}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-
-        <!-- Agente -->
-        <mat-form-field class="input30">
-            <input maxlength="32" matInput formControlName="agente" placeholder="Agente comercial" #agente>
-        </mat-form-field>
-
-        <!-- Presupuesto -->
-        <mat-form-field class="input15">
-            <input type="number" matInput formControlName="presupuesto" placeholder="Presupuesto" #presupuesto>
-        </mat-form-field>
+        <table style="width:98%">
+            <tr>
+                <td width="18%">
+                    <!-- Contratante -->
+                    <mat-form-field class="input100">
+                        <mat-select formControlName="contratante" placeholder="Contratante" #contratante>
+                            <mat-option [value]="null"></mat-option>
+                            <mat-option *ngFor="let contratante of contratantes" [value]="contratante.id">
+                                {{ contratante.nombre }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td width="25%">
+                    <!-- Agente -->
+                    <mat-form-field class="input100">
+                        <input maxlength="32" matInput formControlName="agente" placeholder="Agente comercial" #agente>
+                    </mat-form-field>
+                </td>
+                <td width="12%">
+                    <!-- Presupuesto -->
+                    <mat-form-field class="input100">
+                        <input type="number" matInput formControlName="presupuesto" placeholder="Presupuesto"
+                            #presupuesto>
+                    </mat-form-field>
+                </td>
+                <td width="5%"></td>
+                <td>
+                    <!-- Cobrado -->
+                    <label style="color:rgb(128, 128, 128)">Cobrado</label>
+                    <mat-radio-group class="radio-group" matInput formControlName="cobrado" #cobrado>
+                        <mat-radio-button class="radio-button" [value]="1">Sí</mat-radio-button>
+                        <mat-radio-button class="radio-button" [value]="0">No</mat-radio-button>
+                    </mat-radio-group>
+                </td>
+            </tr>
+        </table>
 
         <!-- Observaciones generales -->
         <mat-form-field class="input100">

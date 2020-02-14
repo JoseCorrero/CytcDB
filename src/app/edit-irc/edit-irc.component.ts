@@ -50,6 +50,7 @@ export class EditIrcComponent implements OnInit {
           this.fgInstalacion.get('agente').setValue(instalacion.Agente);
           this.fgInstalacion.get('instaladores').setValue(instalacion.Instaladores);
           this.fgInstalacion.get('presupuesto').setValue(instalacion.Presupuesto);
+          this.fgInstalacion.get('cobrado').setValue(instalacion.IRIS_Cobrado);
           this.fgInstalacion.get('observaciones').setValue(instalacion.Observaciones);
           this.fgIrc.get('numLlaves').setValue(instalacion.IRC_NumLlaves); // IRC
           this.fgIrc.get('facturado').setValue(instalacion.IRC_Facturado);
@@ -84,10 +85,11 @@ export class EditIrcComponent implements OnInit {
         this.fgInstalacion.get('agente').value,
         this.fgInstalacion.get('instaladores').value,
         this.fgInstalacion.get('presupuesto').value,
+        this.fgInstalacion.get('cobrado').value,
         this.fgInstalacion.get('observaciones').value,
         this.fgIrc.get('numLlaves').value, // IRC
         this.fgIrc.get('facturado').value,
-        null, null, null, null, null, null, null, // IRIS
+        null, null, null, null, null, null, // IRIS
         null, null, null, // Completa
         null, null, null, null, null, null, null, null, null, null, null, null, // Gas natural
         null, // Mantenimiento

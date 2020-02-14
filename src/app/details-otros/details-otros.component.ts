@@ -50,13 +50,13 @@ export class DetailsOtrosComponent implements OnInit {
             instalacion.Agente,
             instalacion.Instaladores,
             instalacion.Presupuesto,
+            instalacion.IRIS_Cobrado,
             instalacion.Observaciones,
             null, null, // IRC
             instalacion.IRIS_Nombre,
             instalacion.IRIS_Apellidos,
             instalacion.IRIS_Dni,
             instalacion.IRIS_Telefonos,
-            instalacion.IRIS_Cobrado,
             instalacion.IRIS_AparatoExistente,
             instalacion.IRIS_AparatosVendidos
           );

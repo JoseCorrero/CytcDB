@@ -26,6 +26,21 @@
                 <p><b>Instaladores</b> <br> {{ instalacion.instaladores }}</p>
                 <p><b>Fecha de instalación</b> <br> {{ instalacion.fechaInstalacion }}</p>
                 <p><b>Presupuesto</b> <br> {{ instalacion.presupuesto }} €</p>
+                <table style="text-align: center;">
+                    <tr>
+                        <th>Cobrado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-icon class="check" *ngIf="instalacion.iris_cobrado == 1">
+                                check
+                            </mat-icon>
+                            <mat-icon class="cancel" *ngIf="instalacion.iris_cobrado == 0">
+                                close
+                            </mat-icon>
+                        </td>
+                    </tr>
+                </table>
             </mat-card>
 
             <mat-card>

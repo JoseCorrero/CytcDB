@@ -19,27 +19,12 @@
 
         <br>
 
-        <table style="width:100%">
-            <tr>
-                <td width="30%">
-                    <!-- Teléfonos -->
-                    <mat-form-field class="input100">
-                        <textarea maxlength="64" rows="5" matInput formControlName="telefonos" placeholder="Teléfonos"
-                            #telefonos></textarea>
-                        <mat-hint align="end"> {{ telefonos.value.length }} / 64 </mat-hint>
-                    </mat-form-field>
-                </td>
-                <td width="10%"></td>
-                <td>
-                    <!-- Cobrado -->
-                    <label style="color:rgb(128, 128, 128)">Cobrado</label>
-                    <mat-radio-group class="radio-group" matInput formControlName="cobrado" #cobrado>
-                        <mat-radio-button class="radio-button" [value]="1">Sí</mat-radio-button>
-                        <mat-radio-button class="radio-button" [value]="0">No</mat-radio-button>
-                    </mat-radio-group>
-                </td>
-            </tr>
-        </table>
+        <!-- Teléfonos -->
+        <mat-form-field class="input50">
+            <textarea maxlength="64" rows="5" matInput formControlName="telefonos" placeholder="Teléfonos"
+                #telefonos></textarea>
+            <mat-hint align="end"> {{ telefonos.value.length }} / 64 </mat-hint>
+        </mat-form-field>
 
         <br>
 

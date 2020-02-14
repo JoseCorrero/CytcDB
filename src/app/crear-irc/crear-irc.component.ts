@@ -49,10 +49,11 @@ export class CrearIrcComponent implements OnInit {
       this.fgInstalacion.get('agente').value, 
       this.fgInstalacion.get('instaladores').value, 
       this.fgInstalacion.get('presupuesto').value, 
+      this.fgInstalacion.get('cobrado').value,
       this.fgInstalacion.get('observaciones').value, 
       this.fgIrc.get('numLlaves').value, // IRC
       this.fgIrc.get('facturado').value, 
-      null, null, null, null, null, null, null, // IRIS
+      null, null, null, null, null, null, // IRIS
       null, null, null, // Completa
       null, null, null, null, null, null, null, null, null, null, null, null, // Gas natural
       null, // Mantenimiento

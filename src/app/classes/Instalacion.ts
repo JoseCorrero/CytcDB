@@ -19,6 +19,7 @@ export default class Instalacion {
     agente: string;
     instaladores: string;
     presupuesto: number;
+    iris_cobrado: number;
     observaciones: string;
 
     irc_numLlaves: number;
@@ -28,7 +29,6 @@ export default class Instalacion {
     iris_apellidos: string;
     iris_dni: string;
     iris_telefonos: string;
-    iris_cobrado: number;
     iris_aparatoExistente: string;
     iris_aparatosVendidos: string;
 
@@ -65,6 +65,7 @@ export default class Instalacion {
                 agente = null,
                 instaladores = null,
                 presupuesto = null,
+                iris_cobrado = null,
                 observaciones = null,
             
                 irc_numLlaves = null,
@@ -74,7 +75,6 @@ export default class Instalacion {
                 iris_apellidos = null,
                 iris_dni = null,
                 iris_telefonos = null,
-                iris_cobrado = null,
                 iris_aparatoExistente = null,
                 iris_aparatosVendidos = null,
             
@@ -108,6 +108,7 @@ export default class Instalacion {
         this.agente = agente; 
         this.instaladores = instaladores; 
         this.presupuesto = presupuesto; 
+        this.iris_cobrado = iris_cobrado; 
         this.observaciones = observaciones; 
     
         this.irc_numLlaves = irc_numLlaves; 
@@ -117,7 +118,6 @@ export default class Instalacion {
         this.iris_apellidos = iris_apellidos; 
         this.iris_dni = iris_dni; 
         this.iris_telefonos = iris_telefonos; 
-        this.iris_cobrado = iris_cobrado; 
         this.iris_aparatoExistente = iris_aparatoExistente; 
         this.iris_aparatosVendidos = iris_aparatosVendidos; 
     

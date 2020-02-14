@@ -90,13 +90,13 @@ export class CrearGasNaturalComponent implements OnInit {
           this.fgInstalacion.get('agente').value,
           this.fgInstalacion.get('instaladores').value,
           this.fgInstalacion.get('presupuesto').value,
+          this.fgInstalacion.get('cobrado').value,
           this.fgInstalacion.get('observaciones').value,
           null, null, // IRC
           this.fgIris.get('nombre').value, // IRIS
           this.fgIris.get('apellidos').value,
           this.fgIris.get('dni').value,
           this.fgIris.get('telefonos').value,
-          this.fgIris.get('cobrado').value,
           this.fgIris.get('aparatoExistente').value,
           this.fgIris.get('aparatosVendidos').value,
           this.fgCompleta.get('estado').value, // Completa

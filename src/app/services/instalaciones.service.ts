@@ -15,10 +15,10 @@ export class InstalacionesService {
   constructor(private http: HttpClient) { }
 
   addInstalacion(esBaja, direccion, id_poblacion, id_contratante, fechaInstalacion, 
-                 agente, instaladores, presupuesto, observaciones, 
+                 agente, instaladores, presupuesto, iris_cobrado, observaciones, 
                  irc_numLlaves, irc_facturado, 
                  iris_nombre, iris_apellidos, iris_dni, iris_telefonos, 
-                 iris_cobrado, iris_aparatoExistente, iris_aparatosVendidos, 
+                 iris_aparatoExistente, iris_aparatosVendidos, 
                  irisc_id_estado, irisc_fechaContrato, irisc_observaciones, 
                  irisgn_id_mercado, irisgn_fechaPuestaGas, irisgn_tiposAparato, irisgn_piezas, 
                  irisgn_tiroForzado, irisgn_soporteExterior, irisgn_idi, irisgn_facturado1, irisgn_facturado2, 
@@ -49,10 +49,10 @@ export class InstalacionesService {
 
     const obj = {
       esBaja, direccion, id_poblacion, id_contratante, fechaInstalacion, 
-      agente, instaladores, presupuesto, observaciones, 
+      agente, instaladores, presupuesto, iris_cobrado, observaciones, 
       irc_numLlaves, irc_facturado, 
       iris_nombre, iris_apellidos, iris_dni, iris_telefonos, 
-      iris_cobrado, iris_aparatoExistente, iris_aparatosVendidos, 
+      iris_aparatoExistente, iris_aparatosVendidos, 
       irisc_id_estado, irisc_fechaContrato, irisc_observaciones, 
       irisgn_id_mercado, irisgn_fechaPuestaGas, irisgn_tiposAparato, irisgn_piezas, 
       irisgn_tiroForzado, irisgn_soporteExterior, irisgn_idi, irisgn_facturado1, irisgn_facturado2, 
@@ -99,10 +99,10 @@ export class InstalacionesService {
 
   updateInstalacion(id, 
                     esBaja, direccion, id_poblacion, id_contratante, fechaInstalacion, 
-                    agente, instaladores, presupuesto, observaciones, 
+                    agente, instaladores, presupuesto, iris_cobrado, observaciones, 
                     irc_numLlaves, irc_facturado, 
                     iris_nombre, iris_apellidos, iris_dni, iris_telefonos, 
-                    iris_cobrado, iris_aparatoExistente, iris_aparatosVendidos, 
+                    iris_aparatoExistente, iris_aparatosVendidos, 
                     irisc_id_estado, irisc_fechaContrato, irisc_observaciones, 
                     irisgn_id_mercado, irisgn_fechaPuestaGas, irisgn_tiposAparato, irisgn_piezas, 
                     irisgn_tiroForzado, irisgn_soporteExterior, irisgn_idi, irisgn_facturado1, irisgn_facturado2, 
@@ -133,10 +133,10 @@ export class InstalacionesService {
                 
     const obj = {
       esBaja, direccion, id_poblacion, id_contratante, fechaInstalacion, 
-      agente, instaladores, presupuesto, observaciones, 
+      agente, instaladores, presupuesto, iris_cobrado, observaciones, 
       irc_numLlaves, irc_facturado, 
       iris_nombre, iris_apellidos, iris_dni, iris_telefonos, 
-      iris_cobrado, iris_aparatoExistente, iris_aparatosVendidos, 
+      iris_aparatoExistente, iris_aparatosVendidos, 
       irisc_id_estado, irisc_fechaContrato, irisc_observaciones, 
       irisgn_id_mercado, irisgn_fechaPuestaGas, irisgn_tiposAparato, irisgn_piezas, 
       irisgn_tiroForzado, irisgn_soporteExterior, irisgn_idi, irisgn_facturado1, irisgn_facturado2, 

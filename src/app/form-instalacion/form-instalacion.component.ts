@@ -82,6 +82,7 @@ export class FormInstalacionComponent implements OnInit {
       agente: [ '' ],
       instaladores: [ '' ],
       presupuesto: [ null , Validators.compose([Validators.max(99999999.99), Validators.min(0)]) ],
+      cobrado: [ null ],
       observaciones: [ '' ]
     });
   }
